@@ -9,8 +9,10 @@ import MovieDetail from './pages/MovieDetail';
 import MyList from './pages/MyList';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import AdminDashboard from './pages/AdminDashboard';
 import { AuthProvider } from './contexts/AuthContext';
 import ProtectedRoute from './components/ProtectedRoute';
+import AdminRoute from './components/AdminRoute';
 
 function App() {
   return (
@@ -26,6 +28,7 @@ function App() {
             <Route path="/movies" element={<ProtectedRoute><Movies /></ProtectedRoute>} />
             <Route path="/movie/:id" element={<ProtectedRoute><MovieDetail /></ProtectedRoute>} />
             <Route path="/my-list" element={<ProtectedRoute><MyList /></ProtectedRoute>} />
+            <Route path="/admin" element={<AdminRoute><AdminDashboard /></AdminRoute>} />
           </Routes>
           <Toaster position="top-center" />
         </div>
